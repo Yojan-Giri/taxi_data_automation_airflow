@@ -1,4 +1,4 @@
-# Apache Airflow Project
+# Apache Airflow Project: NYC Taxi Data Automation
 
 ## Overview
 This project automates a data pipeline using Apache Airflow, AWS Glue, and S3 to process NYC Yellow Taxi data. The pipeline follows these key steps:
@@ -33,7 +33,9 @@ Ensure you have the following installed:
 
 - Python 3.8+
 - Apache Airflow
-- Virtual Environment (optional but recommended)
+- EC2 Instance
+- AWS CLI 
+- IAM Role with AWS Glue and S3 Access
 
 ## Setup Instructions
 
@@ -77,7 +79,24 @@ After running airflow standalone, Airflow will generate a default admin user. Yo
    ```
 3. Open the Airflow UI and enable the DAGs.
 
-### 7.  Troubleshooting
+### 7. Set Up AWS Connection in Airflow  
+
+1. Open [Airflow Web UI](http://localhost:8080)  
+2. Go to **Admin** > **Connections** > **+ Add Connection**  
+3. Set:  
+   - **Connection Id**: `aws_default`  
+   - **Connection Type**: `Amazon Web Services`  
+   - **Login**: *AWS Access Key ID*  
+   - **Password**: *AWS Secret Access Key*  
+   - **Extra**:  
+     ```json
+     { "region_name": "us-east-1" }
+     ```
+   *(Replace `"us-east-1"` with your AWS region)*  
+4. Click **Save**  
+
+
+### 8.  Troubleshooting
 
 If Airflow doesn't start, check the logs:
 
