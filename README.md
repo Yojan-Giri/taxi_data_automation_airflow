@@ -5,26 +5,26 @@ This project automates a data pipeline using Apache Airflow, AWS Glue, and S3 to
 
 ## 1. EC2 Setup & Airflow Integration
 
--An EC2 instance is provisioned to host Apache Airflow, which is used to orchestrate the pipeline.
+- An EC2 instance is provisioned to host Apache Airflow, which is used to orchestrate the pipeline.
 
 ## 2. Data Ingestion to S3
 
--A new S3 bucket is created to store raw data files.
+- A new S3 bucket is created to store raw data files.
 
--The NYC Yellow Taxi dataset is uploaded to the S3 bucket.
+- The NYC Yellow Taxi dataset is uploaded to the S3 bucket.
 
 ## 3. Glue Crawler & Catalog Creation
 
--The pipeline ensures that an AWS Glue Crawler is created and catalogs the data from S3 into the AWS Glue Data Catalog if it doesn't already exist.
+- The pipeline ensures that an AWS Glue Crawler is created and catalogs the data from S3 into the AWS Glue Data Catalog if it doesn't already exist.
 
 ## 4. Data Transformation using AWS Glue Job
 
--The Glue Job script is stored in S3 and executed via Airflow.
--The script performs data cleaning, feature engineering, and outlier filtering (e.g., removing extreme fare values).
--New features such as trip duration, time-based features, trip categorization, and payment type mapping are added.
+- The Glue Job script is stored in S3 and executed via Airflow.
+- The script performs data cleaning, feature engineering, and outlier filtering (e.g., removing extreme fare values).
+- New features such as trip duration, time-based features, trip categorization, and payment type mapping are added.
 ## 5. Processed Data Storage & Catalog Update
 
--The transformed dataset is written back to S3 in Parquet format and registered in the Glue Catalog for further analysis.
+- The transformed dataset is written back to S3 in Parquet format and registered in the Glue Catalog for further analysis.
 
 By leveraging Apache Airflow, the entire process is automated, ensuring efficient scheduling, monitoring, and execution of the data pipeline. 
 
