@@ -90,9 +90,9 @@ After running airflow standalone, Airflow will generate a default admin user. Yo
    - **Password**: *AWS Secret Access Key*  
    - **Extra**:  
      ```json
-     { "region_name": "us-east-1" }
+     { "region_name": "eu-north-1" }
      ```
-   *(Replace `"us-east-1"` with your AWS region)*  
+   *(Replace `"eu-north-1"` with your AWS region)*  
 4. Click **Save**  
 
 
